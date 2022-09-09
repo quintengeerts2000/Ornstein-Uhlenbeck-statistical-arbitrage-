@@ -99,6 +99,12 @@ Significant drawback of using this method for generating buy and sell signals is
 
 I will be using the values: -3, -1.5, 3 and 1.5 respectively 
 
+Figure below shows an example timeseries of these s-scores the modified s-score takes into account the drift of the idiosyncratic part
+
+![s-scores](saved_figs/s_score.png)
+
+
 Backtests and results:
 ------
 ![backtest1](saved_figs/backtest_no_tc.png)
+![backtest2](saved_figs/backtest_tc.png)

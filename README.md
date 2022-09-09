@@ -108,5 +108,30 @@ Figure below shows an example timeseries of these s-scores the modified s-score 
 
 Backtests and results:
 ------
+I have performed two backtests on 18 months of 15-minute candlestick data provided by Binance. I will discuss the results of the backtest here.
+#### 1) No transaction costs  
 ![backtest1](saved_figs/backtest_no_tc.png)
+Backtest came back very positive with high returns and very little drawdowns some results:
+
+| Name   |      Results      |
+|----------|:-------------:|
+| Total trades |  674 |
+| Hitrate |    53.85%   |
+| average win | 41.08 | 
+| average loss| -24.13 |
+| total stop losses | 358 | 
+| Total take profits | 316 | 
+| Annualised sharpe | 3.80 | 
+
+#### 2) Adding transaction costs 
 ![backtest2](saved_figs/backtest_tc.png)
+
+| Name   |      Results      |
+|----------|:-------------:|
+| Total trades |  674 |
+| Hitrate |    45.40%   |
+| average win | 9.17 | 
+| average loss| -8.85 |
+| total stop losses | 358 | 
+| Total take profits | 316 | 
+| Annualised sharpe | -1.23 | 

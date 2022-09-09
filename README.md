@@ -1,7 +1,13 @@
 # Ornstein-Uhlenbeck-statistical-arbitrage
+three main features of statistical arbitrage strategies:
+
+- ‘trading signals are systematic, or rule-based, as opposed to driven by fundamentals’
+- ‘the trading book is market-neutral, in the sense that it has zero beta with the market’
+- ‘the mechanism for generating excess returns is statistical’
 
 This repository was based upon a paper by Marco Avallaneda and Jeong-Hyun Lee called Statistical Arbitrage in the US Equities market
 
+The paper describes the application of Ornstein-Uhlenbeck process for modelling the cointegration residual (spread) in statistical arbitrage strategies. Statistical arbitrage is basically a generalized version of pairs trading, where instead of trading one stock against another stock, we trade one portfolio of stocks agains another portfolio of stocks.
 
 Decomposing returns based on factor based asset model
 ----- 

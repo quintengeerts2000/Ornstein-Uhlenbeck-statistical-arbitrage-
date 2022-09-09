@@ -1,0 +1,9 @@
+/.DS_Store
+/.venv
+/API_keys.json
+/__pycache__
+/features.csv
+/log_returns.csv
+/pct_returns.csv
+/price_data
+/s_score_model.pt

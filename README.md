@@ -1,4 +1,4 @@
-# Ornstein-Uhlenbeck-statistiscal-arbitrage
+# Ornstein-Uhlenbeck-statistical-arbitrage
 
 This repository was based upon a paper by Marco Avallaneda and Jeong-Hyun Lee called Statistical Arbitrage in the US Equities market
 

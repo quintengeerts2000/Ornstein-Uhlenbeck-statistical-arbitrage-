@@ -18,7 +18,11 @@ in this section i will explore ways to find the appropriate Beta's and to isolat
 
 The number of eigenportfolio's I will use to model the systematic component will be chosen such that 55% of the variance can be captured by the eigenportfolio's 
 
-this way i don't use a fixed number of eigenvalues 
+this way i don't use a fixed number of eigenvalues
+
+An example of an asset DOGECOIN in this case and the respective eigenportfolio's at 55% cutoff
+
+![examplefit](saved_figs/returns_decomp.png)
 
 Fitting Ornstein-Uhlenbeck model to the data
 ------
@@ -95,5 +99,12 @@ Significant drawback of using this method for generating buy and sell signals is
 
 I will be using the values: -3, -1.5, 3 and 1.5 respectively 
 
+Figure below shows an example timeseries of these s-scores the modified s-score takes into account the drift of the idiosyncratic part
+
+![s-scores](saved_figs/s_score.png)
+
+
 Backtests and results:
 ------
+![backtest1](saved_figs/backtest_no_tc.png)
+![backtest2](saved_figs/backtest_tc.png)

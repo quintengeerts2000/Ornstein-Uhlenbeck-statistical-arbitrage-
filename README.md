@@ -67,7 +67,7 @@ and this is a paramete which can be used as a cutoff for when to trade
 #### 2) MLE method
 This method for fitting the data is adapted from the paper: Optimal Mean Reversion Trading with transaction costs and stop-loss exit by Leung and Li (2008)
 
-They propose fitting the Ornstei-Uhlenbeck model using a MLE method using the following Conditional probability density:
+They propose fitting the Ornstein-Uhlenbeck model using a MLE method using the following Conditional probability density:
 $$f^{OU}(x_i|x_{i-1};m_i, \kappa, \sigma) = \frac{1}{\sqrt{2\pi \tilde{\sigma}^2}} \exp(-\frac{(x_i - x_{i-1}e^{-\kappa \Delta t}-\theta (1- e^{-\kappa \Delta t}))^2}{2 \tilde{\sigma}^2})$$
 
 with the constant $\tilde{\sigma}^2 = \sigma^2 (1-e^{-2\kappa \Delta t})/2\kappa$
@@ -88,7 +88,7 @@ which can be adjusted to account for drift which i will do as well
 
 $s_{mod,i} = s_i - \alpha_i / (\kappa_i \sigma_{eq,i})$
 
-The drift can be interpreted as the slope of the 1000 moving average, we therefore have a built in momentum strategy in this indicator
+The drift can be interpreted as the slope of the moving average, I therefore have a built in momentum strategy in this indicator
 
 Significant drawback of using this method for generating buy and sell signals is that a arbitrary cuttoff will be used when deciding when to buy or sell in the paper (Avalanda 2008) the following rule is used:
 
@@ -114,7 +114,7 @@ I have performed two backtests on 18 months of 15-minute candlestick data provid
 
 Backtest came back very positive with high returns and very little drawdowns some results:
 
-| Name   |      Results      |
+|    |      Results      |
 |----------|:-------------:|
 | Total trades |  674 |
 | Hitrate |    53.85%   |
@@ -129,7 +129,7 @@ Backtest came back very positive with high returns and very little drawdowns som
 
 Unfortunately once I add transaction costs of 0,1% to the backtest the results are only negative
 
-| Name   |      Results      |
+|    |      Results      |
 |----------|:-------------:|
 | Total trades |  674 |
 | Hitrate |    45.40%   |

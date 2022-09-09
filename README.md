@@ -14,7 +14,7 @@ The approach can be summarised in the following steps
 2) Modelling the residual as a mean reverting ornstein-uhlenbeck process
 3) Generate trading-signals if the residual is likely to mean revert
 
-Decomposing returns based on factor based asset model
+1) Decomposing returns based on factor based asset model
 ----- 
 
 based on the paper by Avalanda and Lee (2008) I will use the following SDE to model the asset returns:

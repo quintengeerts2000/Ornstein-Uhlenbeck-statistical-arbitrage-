@@ -11,6 +11,10 @@ $$\frac{dS_i(t)}{S_i(t)}=\alpha_i dt+\displaystyle\sum_{i=1}^N{\beta_{ij}\frac{d
 
 where the term $\displaystyle\sum_{i=1}^N{\beta_{ij}\frac{dI_j(t)}{I_j(t)}}$ represents the systematic component, in this model the eigenportfolio's are used
 
+An example of an asset DOGECOIN in this case and the respective eigenportfolio's at 55% cutoff
+
+![examplefit](saved_figs/returns_decomp.png)
+
 the idiosyncratic component is $\alpha_i dt + dX_i(t)$
 
 ![](saved_figs/with_drift.png)
@@ -19,11 +23,6 @@ in this section i will explore ways to find the appropriate Beta's and to isolat
 
 The number of eigenportfolio's I will use to model the systematic component will be chosen such that 55% of the variance can be captured by the eigenportfolio's 
 
-this way i don't use a fixed number of eigenvalues
-
-An example of an asset DOGECOIN in this case and the respective eigenportfolio's at 55% cutoff
-
-![examplefit](saved_figs/returns_decomp.png)
 
 Fitting Ornstein-Uhlenbeck model to the data
 ------

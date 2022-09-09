@@ -20,7 +20,7 @@ The approach can be summarised in the following steps
 based on the paper by Avalanda and Lee (2008) I will use the following SDE to model the asset returns:
 $$\frac{dS_i(t)}{S_i(t)}=\alpha_i dt+\displaystyle\sum_{i=1}^N{\beta_{ij}\frac{dI_j(t)}{I_j(t)}}+dX_i(t)$$
 
-where the term $\displaystyle\sum_{i=1}^N{\beta_{ij}\frac{dI_j(t)}{I_j(t)}}$ represents the systematic component, in this model the eigenportfolio's are used
+where the term $\displaystyle\sum_{i=1}^N{\beta_{ij}\frac{dI_j(t)}{I_j(t)}}$ represents the systematic component, in this model eigenportfolio's are used. An eigenportfolio can be computed by taking the covariance matrix of all assets and decomposing it's spectrum by finding the eigenvalues and eigenvectors of the matrix. The biggest eigenvalue represents the underlying factor which best describes the variance in the respective returns of all assets. This biggest eigenvector can be thought of as representing the underlying market, in this implementation I use the first x-amount of eigenportfolios and i pick them such that their total variance accounts for at least 55% of the variance of all returns.
 
 An example of an asset DOGECOIN in this case and the respective eigenportfolio's at 55% cutoff
 

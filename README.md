@@ -7,7 +7,7 @@ This repository was based upon a paper by Marco Avallaneda and Jeong-Hyun Lee ca
 ----- 
 
 based on the paper by Avalanda and Lee (2008) I will use the following SDE to model the asset returns:
-$ \frac{dS_i(t)}{S_i(t)} = \alpha_i dt + \displaystyle\sum_{i=1}^N{\beta_{ij}\frac{dI_j(t)}{I_j(t)}} + dX_i(t) $
+$\frac{dS_i(t)}{S_i(t)}=\alpha_i dt+\displaystyle\sum_{i=1}^N{\beta_{ij}\frac{dI_j(t)}{I_j(t)}}+dX_i(t)$
 
 where the term $\displaystyle\sum_{i=1}^N{\beta_{ij}\frac{dI_j(t)}{I_j(t)}}$ represents the systematic component, in this model the eigenportfolio's are used
 

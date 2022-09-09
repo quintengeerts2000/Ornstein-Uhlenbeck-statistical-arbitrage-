@@ -7,7 +7,7 @@ Decomposing returns based on factor based asset model
 ----- 
 
 based on the paper by Avalanda and Lee (2008) I will use the following SDE to model the asset returns:
-$\frac{dS_i(t)}{S_i(t)}=\alpha_i dt+\displaystyle\sum_{i=1}^N{\beta_{ij}\frac{dI_j(t)}{I_j(t)}}+dX_i(t)$
+$$\frac{dS_i(t)}{S_i(t)}=\alpha_i dt+\displaystyle\sum_{i=1}^N{\beta_{ij}\frac{dI_j(t)}{I_j(t)}}+dX_i(t)$$
 
 where the term $\displaystyle\sum_{i=1}^N{\beta_{ij}\frac{dI_j(t)}{I_j(t)}}$ represents the systematic component, in this model the eigenportfolio's are used
 
@@ -70,3 +70,30 @@ Using the observed values $(x_i)_{i=1,...,n}$ we can maximise the average log-li
 
 $$\ell(\theta, \kappa, \sigma|x_{0},x_{1},....,x_{n}) := \frac{1}{n} \displaystyle\sum_{i=1}^n{ln(f^{OU}(x_i|x_{i-1};\theta, \kappa, \sigma))} 
 =\frac{1}{2}ln(2\pi) - ln(\tilde{\sigma}) - \frac{1}{2n\tilde{\sigma}^2} \displaystyle\sum_{i=1}^n{|(x_i - x_{i-1}e^{-\kappa \Delta t}-\theta (1- e^{-\kappa \Delta t}))|^2}$$
+
+Generating buy and sell signals
+------
+
+S-score is a standardised value used in the strategy outlined in the paper by avalanda
+
+$s_i = \frac{X_i(t)-m_i}{\sigma_{eq,i}}$
+
+which can be adjusted to account for drift which i will do as well
+
+$s_{mod,i} = s_i - \alpha_i / (\kappa_i \sigma_{eq,i})$
+
+The drift can be interpreted as the slope of the 1000 moving average, we therefore have a built in momentum strategy in this indicator
+
+Significant drawback of using this method for generating buy and sell signals is that a arbitrary cuttoff will be used when deciding when to buy or sell in the paper (Avalanda 2008) the following rule is used:
+
+- buy to open if $s_i < -1.25$
+- sell to close if $s_i > -0.5$
+
+
+- sell to open if $s_i > 1.25$
+- buy to open if $s_i < -0.75$
+
+I will be using the values: -3, -1.5, 3 and 1.5 respectively 
+
+Backtests and results:
+------

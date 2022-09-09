@@ -12,6 +12,7 @@ $$\frac{dS_i(t)}{S_i(t)}=\alpha_i dt+\displaystyle\sum_{i=1}^N{\beta_{ij}\frac{d
 where the term $\displaystyle\sum_{i=1}^N{\beta_{ij}\frac{dI_j(t)}{I_j(t)}}$ represents the systematic component, in this model the eigenportfolio's are used
 
 the idiosyncratic component is $\alpha_i dt + dX_i(t)$
+![](saved_figs/with_drift.png)
 
 
 in this section i will explore ways to find the appropriate Beta's and to isolate the idiosyncratic component of the asset returns
@@ -28,6 +29,8 @@ Fitting Ornstein-Uhlenbeck model to the data
 ------
 In the paper by Avalanda and Lee (2008) the idiosyncratic component is assumed to be an Ornstein-Uhlenbeck process which can be modelled by the following SDE:
 $$dX_i(t)=\kappa_i(m_i - X_i(t))dt+\sigma_idW_i(t)$$
+
+![](saved_figs/Xi_t.png)
 
 This process is stationary and auto-regressive with lag 1
 with $E[dX_i(t)|X_i(s),s\leq t]=\kappa_i(m_i-X_i(t))dt$

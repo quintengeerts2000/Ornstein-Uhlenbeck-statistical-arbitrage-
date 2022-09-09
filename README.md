@@ -14,7 +14,7 @@ The approach can be summarised in the following steps
 2) Modelling the residual as a mean reverting ornstein-uhlenbeck process
 3) Generate trading-signals if the residual is likely to mean revert
 
-1) Decomposing returns based on factor based asset model
+1.Decomposing returns based on factor based asset model
 ----- 
 
 based on the paper by Avalanda and Lee (2008) I will use the following SDE to model the asset returns:
@@ -35,7 +35,7 @@ in this section i will explore ways to find the appropriate Beta's and to isolat
 The number of eigenportfolio's I will use to model the systematic component will be chosen such that 55% of the variance can be captured by the eigenportfolio's 
 
 
-Fitting Ornstein-Uhlenbeck model to the data
+2.Fitting Ornstein-Uhlenbeck model to the data
 ------
 In the paper by Avalanda and Lee (2008) the idiosyncratic component is assumed to be an Ornstein-Uhlenbeck process which can be modelled by the following SDE:
 $$dX_i(t)=\kappa_i(m_i - X_i(t))dt+\sigma_idW_i(t)$$
@@ -88,7 +88,7 @@ Using the observed values $(x_i)_{i=1,...,n}$ we can maximise the average log-li
 $$\ell(\theta, \kappa, \sigma|x_{0},x_{1},....,x_{n}) := \frac{1}{n} \displaystyle\sum_{i=1}^n{ln(f^{OU}(x_i|x_{i-1};\theta, \kappa, \sigma))} 
 =\frac{1}{2}ln(2\pi) - ln(\tilde{\sigma}) - \frac{1}{2n\tilde{\sigma}^2} \displaystyle\sum_{i=1}^n{|(x_i - x_{i-1}e^{-\kappa \Delta t}-\theta (1- e^{-\kappa \Delta t}))|^2}$$
 
-Generating buy and sell signals
+3.Generating buy and sell signals
 ------
 
 S-score is a standardised value used in the strategy outlined in the paper by avalanda
@@ -117,7 +117,7 @@ Figure below shows an example timeseries of these s-scores the modified s-score 
 ![s-scores](saved_figs/s_score.png)
 
 
-Backtests and results:
+4.Backtests and results:
 ------
 I have performed two backtests on 18 months of 15-minute candlestick data provided by Binance. I will discuss the results of the backtest here.
 #### 1) No transaction costs  
@@ -150,7 +150,7 @@ Unfortunately once I add transaction costs of 0,1% to the backtest the results a
 | Total take profits | 316 | 
 | Annualised sharpe | -1.23 | 
 
-Conclusion
+5.Conclusion
 ------
 The model clearly does contain some alpha even though it is very small on these timescales. 
 I could make some changes like increase the timeframe on which the model trades from 15 minutes to daily returns, perhaps on these longer timeframes the moves are larger and the performance of the strategy is less affected by transaction costs. On the other hand reducing transaction costs sufficiently might be an option as well.

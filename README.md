@@ -36,7 +36,7 @@ I will use 2 methods:
 1) One based on linear regression using a method used by Avalanda and Lee (2008)
 2) MLE discussed in the paper by Leung and LI (2015)
 
-##### 1) Linear regression method
+#### 1) Linear regression method
 Assuming that the parameters of the OU-model are constant the model can discretized using following formula
 $$X_i(t_{0} + \Delta t) = e^{- \kappa_i \Delta t} X_i(t_{0}) + m_i(1-e^{- \kappa_i \Delta t}) + \sigma_i \int_{t_{0}}^{t_{0}+\Delta t}{e^{- \kappa_i (t_{0}+\Delta t-s)}dW_i(s)}$$
 
@@ -58,7 +58,7 @@ $\sigma_{eq,i} = {\sigma_i}/{\sqrt{2\kappa_i}}$
 $\tau_i = 1 / \kappa_i$ is the average time of reversal 
 and this is a paramete which can be used as a cutoff for when to trade
 
-##### 2) MLE method
+#### 2) MLE method
 This method for fitting the data is adapted from the paper: Optimal Mean Reversion Trading with transaction costs and stop-loss exit by Leung and Li (2008)
 
 They propose fitting the Ornstei-Uhlenbeck model using a MLE method using the following Conditional probability density:

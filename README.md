@@ -9,6 +9,11 @@ This repository was based upon a paper by Marco Avallaneda and Jeong-Hyun Lee ca
 
 The paper describes the application of Ornstein-Uhlenbeck process for modelling the cointegration residual (spread) in statistical arbitrage strategies. Statistical arbitrage is basically a generalized version of pairs trading, where instead of trading one stock against another stock, we trade one portfolio of stocks agains another portfolio of stocks.
 
+The approach can be summarised in the following steps
+1) Describe asset returns using a statistical model
+2) Modelling the residual as a mean reverting ornstein-uhlenbeck process
+3) Generate trading-signals if the residual is likely to mean revert
+
 Decomposing returns based on factor based asset model
 ----- 
 

@@ -97,3 +97,4 @@ I will be using the values: -3, -1.5, 3 and 1.5 respectively
 
 Backtests and results:
 ------
+![backtest1](saved_figs/backtest_no_tc.png)

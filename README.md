@@ -111,6 +111,7 @@ Backtests and results:
 I have performed two backtests on 18 months of 15-minute candlestick data provided by Binance. I will discuss the results of the backtest here.
 #### 1) No transaction costs  
 ![backtest1](saved_figs/backtest_no_tc.png)
+
 Backtest came back very positive with high returns and very little drawdowns some results:
 
 | Name   |      Results      |
@@ -126,6 +127,8 @@ Backtest came back very positive with high returns and very little drawdowns som
 #### 2) Adding transaction costs 
 ![backtest2](saved_figs/backtest_tc.png)
 
+Unfortunately once I add transaction costs of 0,1% to the backtest the results are only negative
+
 | Name   |      Results      |
 |----------|:-------------:|
 | Total trades |  674 |
@@ -135,3 +138,9 @@ Backtest came back very positive with high returns and very little drawdowns som
 | total stop losses | 358 | 
 | Total take profits | 316 | 
 | Annualised sharpe | -1.23 | 
+
+Conclusion
+------
+The model clearly does contain some alpha even though it is very small on these timescales. 
+I could make some changes like increase the timeframe on which the model trades from 15 minutes to daily returns, perhaps on these longer timeframes the moves are larger and the performance of the strategy is less affected by transaction costs. On the other hand reducing transaction costs sufficiently might be an option as well.
+

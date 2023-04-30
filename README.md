@@ -165,7 +165,7 @@ To adress the previous issues I attempted to resolve them in 4 ways:
 
 The feedforward neural network is a function $\mathbb{R}^4 \rightarrow \mathbb{R}$:
 $$
-(X_t, \mu, \sigma, R^2) \ rightarrow \mathbb{R}
+(X_t, \mu, \sigma, R^2) \rightarrow \mathbb{R}
 $$
 As a objective functions multiple approaches are suggested in "Deep Learning Statistical arbitrage" in this implementation i will use the expected sharpe accounting for transaction costs
 

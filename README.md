@@ -155,3 +155,23 @@ Unfortunately once I add transaction costs of 0,1% to the backtest the results a
 The model clearly does contain some alpha even though it is very small on these timescales. 
 I could make some changes like increase the timeframe on which the model trades from 15 minutes to daily returns, perhaps on these longer timeframes the moves are larger and the performance of the strategy is less affected by transaction costs. On the other hand reducing transaction costs sufficiently might be an option as well.
 
+## OU-statistical arbitrage revisited 
+
+To adress the previous issues I attempted to resolve them in 4 ways:
+- Use a feedforward neural network to assign the weights instead of the naive threshold system
+- Lower transaction costs from 0.1% to 0.01% by trading futures instead of the spot market on binance
+- Include the transaction costs while fitting the model
+- Lower the trade frequency from 15 mins to 6h
+
+The feedforward neural network is a function $\mathbb{R}^4 \rightarrow \mathbb{R}$:
+$$
+(X_t, \mu, \sigma, R^2) \ rightarrow \mathbb{R}
+$$
+As a objective functions multiple approaches are suggested in "Deep Learning Statistical arbitrage" in this implementation i will use the expected sharpe accounting for transaction costs
+
+$$\max_{\mathbf{w}^{\mathbf{\epsilon}} \in \mathbf{W}, \mathbf{\theta} \in \mathbf{\Theta}} \frac{\mathop{\mathbb{E}}[{w_{t-1}^{R}}^{\top} R_t]}{\sqrt{Var[{w_{t-1}^{R}}^{\top} R_t]}}$$
+
+Unfortunately out of sample I have not been able to make this a profitable strategy with a sharpe 0.11 it performs quite bad out of sample though while in sample the same configuration got a sharpe around 1.
+![backtest3](saved_figs/oos.png)
+
+Conclusion is that while in 2020-2021 the strategy would be profitable stat-arb does not perform well after this period, either due to different market conditions or because all stat-arb opportunities are already utilised.

@@ -163,7 +163,7 @@ To adress the previous issues I attempted to resolve them in 4 ways:
 - Include the transaction costs while fitting the model
 - Lower the trade frequency from 15 mins to 6h
 
-The feedforward neural network is a function $\mathbb{R}^4 \rightarrow \mathbb{R}$: $(X_t, \mu, \sigma, R^2) \rightarrow \mathbb{R}$
+The feedforward neural network is a function $(X_t, \mu, \sigma, R^2) \rightarrow \mathbb{R}$
 As a objective functions multiple approaches are suggested in "Deep Learning Statistical arbitrage" in this implementation i will use the expected sharpe accounting for transaction costs
 
 $$\max_{\mathbf{w}^{\mathbf{\epsilon}} \in \mathbf{W}, \mathbf{\theta} \in \mathbf{\Theta}} \frac{\mathop{\mathbb{E}}[{w_{t-1}^{R}}^{\top} R_t]}{\sqrt{Var[{w_{t-1}^{R}}^{\top} R_t]}}$$
